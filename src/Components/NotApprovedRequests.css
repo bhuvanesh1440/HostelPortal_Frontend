@@ -1,0 +1,76 @@
+/* NotApprovedRequests.css */
+.not-approved-requests {
+    padding: 2rem;
+  }
+
+  .toggle-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  
+  .toggle-buttons button {
+    margin: 0 5px;
+    padding: 10px 20px;
+    background-color: #4070f4;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    color: white;
+    
+  }
+  
+  .toggle-buttons button:hover {
+    opacity: 0.8;
+  }
+  
+  
+  .not-approved-requests table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+  }
+  
+  .not-approved-requests table, .not-approved-requests th, .not-approved-requests td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .not-approved-requests th {
+    background-color: #f2f2f2;
+    text-align: left;
+  }
+  
+  .not-approved-requests tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .not-approved-requests tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .not-approved-requests button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .not-approved-requests button:hover {
+    opacity: 0.8;
+  }
+  
+  .approve {
+    color: white;
+    background-color: green;
+    border-radius: 20px;
+  }
+  
+  .notification {
+    background-color: #4caf50; /* Green */
+    color: white;
+    padding: 10px;
+    margin-bottom: 15px;
+    text-align: center;
+    border-radius: 5px;
+  }

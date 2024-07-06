@@ -1,0 +1,95 @@
+.manage-students-form {
+    position: fixed;
+    top: 60px; /* Adjust based on your header height */
+    margin: 2rem;
+    width: calc(100% - 275px); /* Adjust based on your sidebar width */
+    max-width: 1200px;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 200;
+  }
+  
+  .manage-students-form h2 {
+    margin-bottom: 20px;
+  }
+  
+  .manage-students-form form {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Adjust the number of columns as needed */
+    gap: 20px; /* Space between form groups */
+  }
+  
+  .manage-students-form .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .manage-students-form .form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .manage-students-form .form-group input,
+  .manage-students-form .form-group select,
+  .manage-students-form .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .manage-students-form button {
+    padding: 10px 15px;
+    margin-right: 10px;
+    border: none;
+    background: #4070f4;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    max-width: 100px;
+  }
+  
+  .manage-students-form button[type="button"] {
+    background: #f4f4f4;
+    color: #333;
+  }
+  
+  .manage-students-form .form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .manage-students-form .form-group label {
+    margin-bottom: 5px;
+  }
+  
+  .manage-students-form .form-group input,
+  .manage-students-form .form-group select,
+  .manage-students-form .form-group textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .message {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .message.success {
+    background-color: #d4edda;
+    color: #155724;
+  }
+  
+  .message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+  

@@ -1,0 +1,108 @@
+  
+  .permissions-form {
+    position: fixed;
+    top: 60px; /* Adjust based on your header height */
+    margin: 2rem;
+    width: calc(100% - 275px); /* Adjust based on your sidebar width */
+    max-width: 1200px;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 200;
+  }
+  
+  .permissions-form h2 {
+    margin-bottom: 20px;
+  }
+  
+  .permissions-form form {
+    display: flex;
+    flex-wrap: wrap; /* To wrap items to the next line */
+    gap: 5px; /* Space between form groups */
+  }
+  
+  .permissions-form form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Adjust the number of columns as needed */
+    
+  }
+  
+  .permissions-form .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .permissions-form .form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .permissions-form .form-group input,
+  .permissions-form .form-group select,
+  .permissions-form .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  
+  .permissions-form .form-group input[type="date"] {
+    width: 50%; /* Adjust as needed */
+  }
+  
+  .permissions-form button {
+    padding: 10px 15px;
+    margin-right: 10px;
+    border: none;
+    background: #4070f4;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    max-width: 100px;
+  }
+  
+  .permissions-form button[type="button"] {
+    background: #f4f4f4;
+    color: #333;
+  }
+  
+  .permissions-form .form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .permissions-form .form-group label {
+    margin-bottom: 5px;
+  }
+  
+  .permissions-form .form-group input,
+  .permissions-form .form-group select,
+  .permissions-form .form-group textarea {
+    width: 50%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .permissions-form .form-group input[type="date"] {
+    width: 50%; /* Adjust as needed */
+  }
+  
+  .permissions-form button {
+    padding: 10px 15px;
+    margin-right: 10px;
+    border: none;
+    background: #4070f4;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .permissions-form button[type="button"] {
+    background: #f4f4f4;
+    color: #333;
+  }
+  

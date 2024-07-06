@@ -1,0 +1,49 @@
+/* AdminPermissions.css */
+.admin-permissions {
+    padding: 2rem;
+  }
+  
+  .admin-permissions table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+  }
+  
+  .admin-permissions table, .admin-permissions th, .admin-permissions td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .admin-permissions th {
+    background-color: #f2f2f2;
+    text-align: left;
+  }
+  
+  .admin-permissions tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .admin-permissions tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .admin-permissions button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .admin-permissions button:hover {
+    opacity: 0.8;
+  }
+  .approve{
+    color: white;
+    background-color: green;
+    border-radius: 20px;
+  }
+  .reject{
+    color: white;
+    background-color: red;
+    border-radius: 20px;
+  }
