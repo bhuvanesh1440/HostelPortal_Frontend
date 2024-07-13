@@ -1,0 +1,53 @@
+.not-returned-requests {
+    padding: 2rem;
+}
+
+.notification {
+    background-color: #4caf50; /* Green */
+    color: white;
+    padding: 10px;
+    margin-bottom: 15px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.not-returned-requests table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+
+.not-returned-requests table, .not-returned-requests th, .not-returned-requests td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.not-returned-requests th {
+    background-color: #f2f2f2;
+    text-align: left;
+}
+
+.not-returned-requests tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.not-returned-requests tr:hover {
+    background-color: #f1f1f1;
+}
+
+.not-returned-requests button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.not-returned-requests button:hover {
+    opacity: 0.8;
+}
+
+.return {
+    color: white;
+    background-color: green;
+    border-radius: 20px;
+}

@@ -4,40 +4,37 @@ import axios from 'axios';
 
 const ManageStudents = ({ closeForm }) => {
   const [formData, setFormData] = useState({
-    rollno: '',
+    RollNo: '',
     hostelid: '',
-    name: '',
-    phone_no: '',
-    parent_name: '',
-    parent_phone: '',
-    dateOfBirth: '',
-    address: '',
-    email: '',
-    yearOfStudy: '',
-    course: '',
-    isinout: false,
-    guardianContact: '',
-    emergencyContact: '',
-    bloodGroup: '',
-    medicalConditions: ''
+    FirstName: '',
+    LastName: '',
+    Semester: '',
+    Gender: '',
+    Department: '',
+    PhoneNo: '',
+    FatherName: '',
+    FatherMobileNumber: '',
+    DOB: '',
+    Email: ''
   });
 
   const [message, setMessage] = useState(null);
   const [messageType, setMessageType] = useState(null);
 
   const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
+    const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: type === 'checkbox' ? checked : value
+      [name]: value
     });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(formData);
+
     try {
-      const response = await axios.post('http://localhost:5000/api/students/add', formData);
+      const response = await axios.post('http://localhost:5000/api/hostelers', formData);
       console.log(response.data); // Log the response from the backend
 
       // Set success message
@@ -46,30 +43,25 @@ const ManageStudents = ({ closeForm }) => {
 
       // Reset the form
       setFormData({
-        rollno: '',
+        RollNo: '',
         hostelid: '',
-        name: '',
-        phone_no: '',
-        parent_name: '',
-        parent_phone: '',
-        dateOfBirth: '',
-        address: '',
-        email: '',
-        yearOfStudy: '',
-        course: '',
-        isinout: false,
-        guardianContact: '',
-        emergencyContact: '',
-        bloodGroup: '',
-        medicalConditions: ''
+        FirstName: '',
+        LastName: '',
+        Semester: '',
+        Gender: '',
+        Department: '',
+        PhoneNo: '',
+        FatherName: '',
+        FatherMobileNumber: '',
+        DOB: '',
+        Email: ''
       });
     } catch (error) {
       console.error('Error submitting student data:', error);
       
       // Set error message
-      setMessage('Error submitting student data(Duplicate data). Please try again.');
+      setMessage('Error submitting student data (Duplicate data). Please try again.');
       setMessageType('error');
-      
     }
   };
 
@@ -85,12 +77,12 @@ const ManageStudents = ({ closeForm }) => {
 
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label htmlFor="rollno">Roll Number:</label>
+          <label htmlFor="RollNo">Roll Number:</label>
           <input
             type="text"
-            id="rollno"
-            name="rollno"
-            value={formData.rollno}
+            id="RollNo"
+            name="RollNo"
+            value={formData.RollNo}
             onChange={handleChange}
             required
           />
@@ -107,155 +99,113 @@ const ManageStudents = ({ closeForm }) => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="name">Name:</label>
+          <label htmlFor="FirstName">First Name:</label>
           <input
             type="text"
-            id="name"
-            name="name"
-            value={formData.name}
+            id="FirstName"
+            name="FirstName"
+            value={formData.FirstName}
             onChange={handleChange}
             required
           />
         </div>
         <div className="form-group">
-          <label htmlFor="phone_no">Phone Number:</label>
+          <label htmlFor="LastName">Last Name:</label>
           <input
             type="text"
-            id="phone_no"
-            name="phone_no"
-            value={formData.phone_no}
+            id="LastName"
+            name="LastName"
+            value={formData.LastName}
             onChange={handleChange}
             required
           />
         </div>
         <div className="form-group">
-          <label htmlFor="parent_name">Parent's Name:</label>
+          <label htmlFor="Semester">Semester:</label>
           <input
             type="text"
-            id="parent_name"
-            name="parent_name"
-            value={formData.parent_name}
+            id="Semester"
+            name="Semester"
+            value={formData.Semester}
             onChange={handleChange}
             required
           />
         </div>
         <div className="form-group">
-          <label htmlFor="parent_phone">Parent's Phone:</label>
+          <label htmlFor="Gender">Gender:</label>
           <input
             type="text"
-            id="parent_phone"
-            name="parent_phone"
-            value={formData.parent_phone}
+            id="Gender"
+            name="Gender"
+            value={formData.Gender}
             onChange={handleChange}
             required
           />
         </div>
         <div className="form-group">
-          <label htmlFor="dateOfBirth">Date of Birth:</label>
+          <label htmlFor="Department">Department:</label>
+          <input
+            type="text"
+            id="Department"
+            name="Department"
+            value={formData.Department}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="PhoneNo">Phone Number:</label>
+          <input
+            type="text"
+            id="PhoneNo"
+            name="PhoneNo"
+            value={formData.PhoneNo}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="FatherName">Father's Name:</label>
+          <input
+            type="text"
+            id="FatherName"
+            name="FatherName"
+            value={formData.FatherName}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="FatherMobileNumber">Father's Mobile Number:</label>
+          <input
+            type="text"
+            id="FatherMobileNumber"
+            name="FatherMobileNumber"
+            value={formData.FatherMobileNumber}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="DOB">Date of Birth:</label>
           <input
             type="date"
-            id="dateOfBirth"
-            name="dateOfBirth"
-            value={formData.dateOfBirth}
+            id="DOB"
+            name="DOB"
+            value={formData.DOB}
             onChange={handleChange}
             required
           />
         </div>
         <div className="form-group">
-          <label htmlFor="address">Address:</label>
-          <input
-            type="text"
-            id="address"
-            name="address"
-            value={formData.address}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="email">Email:</label>
+          <label htmlFor="Email">Email:</label>
           <input
             type="email"
-            id="email"
-            name="email"
-            value={formData.email}
+            id="Email"
+            name="Email"
+            value={formData.Email}
             onChange={handleChange}
             required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="yearOfStudy">Year of Study:</label>
-          <input
-            type="text"
-            id="yearOfStudy"
-            name="yearOfStudy"
-            value={formData.yearOfStudy}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="course">Course:</label>
-          <input
-            type="text"
-            id="course"
-            name="course"
-            value={formData.course}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        {/* <div className="form-group">
-          <label htmlFor="isinout">Is In/Out:</label>
-          <input
-            type="checkbox"
-            id="isinout"
-            name="isinout"
-            checked={formData.isinout}
-            onChange={handleChange}
-          /> 
-        </div>*/}
-        <div className="form-group">
-          <label htmlFor="guardianContact">Guardian Contact:</label>
-          <input
-            type="text"
-            id="guardianContact"
-            name="guardianContact"
-            value={formData.guardianContact}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="emergencyContact">Emergency Contact:</label>
-          <input
-            type="text"
-            id="emergencyContact"
-            name="emergencyContact"
-            value={formData.emergencyContact}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="bloodGroup">Blood Group:</label>
-          <input
-            type="text"
-            id="bloodGroup"
-            name="bloodGroup"
-            value={formData.bloodGroup}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="medicalConditions">Medical Conditions:</label>
-          <input
-            type="text"
-            id="medicalConditions"
-            name="medicalConditions"
-            value={formData.medicalConditions}
-            onChange={handleChange}
           />
         </div>
         <br />

@@ -1,19 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js or index.js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { AuthProvider } from './Components/AuthContext'; // Import AuthProvider
+import Login from './Components/Login';
 import Sidebar from './Components/Sidebar';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import AdminPermissions from './Components/AdminPermissions';
-import PermissionsForm from './Components/PermissionsForm';
-
-
+import Signin from './Components/Signin';
 
 function App() {
   return (
-    <>
-    <Sidebar/>
-    
-
-    </>
+    <AuthProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/register" element={<Signin />} />
+          <Route path="/home" element={<Sidebar />} />
+          {/* Add other routes here */}
+        </Routes>
+      </Router>
+    </AuthProvider>
   );
 }
 

@@ -1,0 +1,173 @@
+/* NotApprovedRequests.css */
+.requests-report {
+    padding: 2rem;
+  }
+
+
+  .toggle-buttons button:hover {
+    opacity: 0.8;
+  }
+  
+  
+  .requests-report table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+  }
+  
+  .requests-report table, .requests-report th, .requests-report td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .requests-report th {
+    background-color: #f2f2f2;
+    text-align: left;
+  }
+  
+  .requests-report tr:nth-child(even) {
+    background-color: #c5e8f6;
+  }
+  .requests-report tr:nth-child(odd) {
+    background-color: #f1f1f1;
+  }
+  requests-report tr:nth-child(odd):hover {
+    background-color: #c5e8f6;
+  }
+  
+  .requests-report tr:nth-child(even):hover {
+    background-color: #f1f1f1;
+  }
+  
+  .requests-report button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .requests-report button:hover {
+    opacity: 0.8;
+  }
+  
+  .approve {
+    color: white;
+    background-color: green;
+    border-radius: 20px;
+  }
+  
+  .notification {
+    background-color: #4caf50; /* Green */
+    color: white;
+    padding: 10px;
+    margin-bottom: 15px;
+    text-align: center;
+    border-radius: 5px;
+  }
+  .requests-report {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.requests-report h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.toggle-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.toggle-buttons button {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+.toggle-buttons button:hover {
+    background-color: #0056b3;
+}
+
+.date-filters {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.date-filters label {
+    margin: 0 10px;
+    font-size: 16px;
+}
+
+.date-filters input[type="date"] {
+    padding: 5px;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.requests-report {
+  padding: 2rem;
+}
+
+.toggle-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.toggle-buttons button {
+  margin: 0 5px;
+  padding: 10px 20px;
+  background-color: #4070f4;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: white;
+}
+
+.toggle-buttons button:hover {
+  opacity: 0.8;
+}
+
+.requests-report table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+.requests-report table, .requests-report th, .requests-report td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.requests-report th {
+  background-color: #f2f2f2;
+  text-align: left;
+}
+
+.requests-report tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.requests-report tr:hover {
+  background-color: #f1f1f1;
+}
+
+.requests-report td {
+  padding: 10px;
+}
+
+.requests-report td:nth-child(8) {
+  color: green; /* Default color for "Not Delayed" */
+}
+
+.requests-report td:nth-child(8).delayed {
+  color: red; /* Color for "Delayed" */
+}

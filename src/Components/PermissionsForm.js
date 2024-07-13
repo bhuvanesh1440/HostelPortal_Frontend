@@ -5,10 +5,9 @@ import axios from 'axios';
 const PermissionsForm = ({ closeForm }) => {
   const [formData, setFormData] = useState({
     name: '',
-    rollNumber: '',
+    rollno: '',
     hostelid: '',
     requestType: 'permission',
-    leaveType: '',
     startDate: '',
     endDate: '',
     fromTime: '',
@@ -21,19 +20,24 @@ const PermissionsForm = ({ closeForm }) => {
     setFormData({ ...formData, [name]: value });
   };
 
+  
+
   const handleSubmit = async (e) => {
+    const dataToSend = {
+      ...formData,
+      endDate: formData.endDate || formData.startDate  // Default endDate to startDate if not provided
+    };
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/management/request-permission', formData);
+      const response = await axios.post('http://localhost:5000/api/requests', dataToSend);
       console.log(response.data); // Log the response from the backend
       setMessage('Request submitted successfully!');
       setMessageType('success');
       setFormData({
         name: '',
-        rollNumber: '',
+        rollno: '',
         hostelid: '',
         requestType: 'permission',
-        leaveType: '',
         startDate: '',
         endDate: '',
         fromTime: '',
@@ -98,12 +102,12 @@ const PermissionsForm = ({ closeForm }) => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="rollNumber">Roll Number:</label>
+          <label htmlFor="rollno">Roll Number:</label>
           <input
             type="text"
-            id="rollNumber"
-            name="rollNumber"
-            value={formData.rollNumber}
+            id="rollno"
+            name="rollno"
+            value={formData.rollno}
             onChange={handleChange}
             required
           />
@@ -159,21 +163,6 @@ const PermissionsForm = ({ closeForm }) => {
         ) : (
           <>
             <div className="form-group">
-              <label htmlFor="leaveType">Leave Type:</label>
-              <select
-                id="leaveType"
-                name="leaveType"
-                value={formData.leaveType}
-                onChange={handleChange}
-                required
-              >
-                <option value="">Select leave type</option>
-                <option value="sick">Sick Leave</option>
-                <option value="casual">Casual Leave</option>
-                <option value="annual">Annual Leave</option>
-              </select>
-            </div>
-            <div className="form-group">
               <label htmlFor="startDate">From Date:</label>
               <input
                 type="date"
@@ -217,7 +206,10 @@ const PermissionsForm = ({ closeForm }) => {
                 required
               />
             </div>
-            <div className="form-group">
+            
+          </>
+        )}
+        <div className="form-group">
               <label htmlFor="reason">Reason & Travelling Info:</label>
               <textarea
                 id="reason"
@@ -227,9 +219,6 @@ const PermissionsForm = ({ closeForm }) => {
                 required
               ></textarea>
             </div>
-          </>
-        )}
-
         
         
         <div className="button-group">

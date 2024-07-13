@@ -1,4 +1,3 @@
-// NotApprovedRequests.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './NotApprovedRequests.css'; // Style your table as needed
@@ -8,14 +7,22 @@ const NotApprovedRequests = () => {
   const [leaves, setLeaves] = useState([]);
   const [showPermissions, setShowPermissions] = useState(true); // State to toggle between permissions and leaves
   const [notification, setNotification] = useState(''); // State to show notification message
+  const [adminName, setAdminName] = useState(''); // State to store the admin's name
 
   useEffect(() => {
     fetchNotApprovedRequests();
+    // Fetch the admin's name from the session or context (this is a placeholder)
+    const adminDataString = localStorage.getItem('admin');
+    console.log(adminDataString)
+    if (adminDataString) {
+      const adminData = JSON.parse(adminDataString);
+      setAdminName(adminData.name);
+    }
   }, []);
 
   const fetchNotApprovedRequests = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/management/not-approved-requests');
+      const response = await axios.get('http://localhost:5000/api/requests/not-approved');
       const notApprovedRequests = response.data;
 
       const permissions = notApprovedRequests.filter(request => request.requestType === 'permission');
@@ -28,12 +35,12 @@ const NotApprovedRequests = () => {
     }
   };
 
-  const handleApprove = async (rollno, hostelid) => {
+  const handleApprove = async (id) => {
     try {
-      const response = await axios.post('http://localhost:5000/api/management/approve-permission', { rollno, hostelid });
+      const response = await axios.post(`http://localhost:5000/api/requests/${id}/approve`, { acceptedBy: adminName });
       
       if (response.status === 200) {
-        setNotification('Permission approved and parent notified');
+        setNotification('Request approved and parent notified');
         setTimeout(() => setNotification(''), 5000); // Hide notification after 5 seconds
         fetchNotApprovedRequests(); // Refetch the data to update the tables
       } else {
@@ -81,7 +88,7 @@ const NotApprovedRequests = () => {
                   <td>{permission.toTime}</td>
                   <td>{permission.reason}</td>
                   <td>
-                    <button className='approve' onClick={() => handleApprove(permission.rollno, permission.hostelid)}>Approve</button>
+                    <button className='approve' onClick={() => handleApprove(permission._id)}>Approve</button>
                   </td>
                 </tr>
               ))}
@@ -117,7 +124,7 @@ const NotApprovedRequests = () => {
                   <td>{leave.toTime}</td>
                   <td>{leave.reason}</td>
                   <td>
-                    <button className='approve' onClick={() => handleApprove(leave.rollno, leave.hostelid)}>Approve</button>
+                    <button className='approve' onClick={() => handleApprove(leave._id)}>Approve</button>
                   </td>
                 </tr>
               ))}
