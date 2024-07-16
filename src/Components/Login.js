@@ -31,19 +31,19 @@ function Login() {
   
       // Determine login route based on selected role
       if (formData.role === "student") {
-        loginRoute = "http://localhost:5000/api/hostler-credentials/login";
+        loginRoute = "https://hostelportal-backend.onrender.com/api/hostler-credentials/login";
         response = await axios.post(loginRoute, {
           RollNumber: formData.username,
           password: formData.password,
         });
         userData = response.data; // Assuming response contains user data
       } else if (formData.role === "admin") {
-        loginRoute = "http://localhost:5000/api/admins/login";
+        loginRoute = "https://hostelportal-backend.onrender.com/api/admins/login";
         response = await axios.post(loginRoute, {
           username: formData.username,
           password: formData.password,
         });
-        const adminResponse = await axios.get(`http://localhost:5000/api/admins/${formData.username}`);
+        const adminResponse = await axios.get(`https://hostelportal-backend.onrender.com/api/admins/${formData.username}`);
         userData = adminResponse.data; // Assuming response contains admin data
       } else {
         setError("Invalid role selected");

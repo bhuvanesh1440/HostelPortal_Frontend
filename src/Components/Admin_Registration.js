@@ -22,7 +22,7 @@ const AdminRegistration = () => {
     e.preventDefault();
     console.log(formData);
     try {
-      const response = await axios.post('http://localhost:5000/api/admins', formData);
+      const response = await axios.post('https://hostelportal-backend.onrender.com/api/admins', formData);
       console.log('Admin created:', response.data);
       setSuccessMessage('Admin created successfully.');
       setFormData({

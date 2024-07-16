@@ -14,7 +14,7 @@ const NotReturned = () => {
 
     const fetchNotReturnedRequests = async () => {
         try {
-            const response = await axios.get('http://localhost:5000/api/requests/not-returned');
+            const response = await axios.get('https://hostelportal-backend.onrender.com/api/requests/not-returned');
             const notReturnedRequests = response.data;
 
             const permissions = notReturnedRequests.filter(request => request.requestType === 'permission');

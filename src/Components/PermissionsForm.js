@@ -29,7 +29,7 @@ const PermissionsForm = ({ closeForm }) => {
     };
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/requests', dataToSend);
+      const response = await axios.post('https://hostelportal-backend.onrender.com/api/requests', dataToSend);
       console.log(response.data); // Log the response from the backend
       setMessage('Request submitted successfully!');
       setMessageType('success');

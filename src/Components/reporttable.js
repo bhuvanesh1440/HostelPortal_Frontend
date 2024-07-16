@@ -11,7 +11,7 @@ const Reports = () => {
     useEffect(() => {
         const fetchReports = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/requests/'); // Replace with your backend API endpoint
+                const response = await axios.get('https://hostelportal-backend.onrender.com/api/requests/'); // Replace with your backend API endpoint
                 setReports(response.data);
             } catch (error) {
                 console.error('Error fetching reports:', error);

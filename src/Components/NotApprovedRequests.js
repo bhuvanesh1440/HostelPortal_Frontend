@@ -22,7 +22,7 @@ const NotApprovedRequests = () => {
 
   const fetchNotApprovedRequests = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/requests/not-approved');
+      const response = await axios.get('https://hostelportal-backend.onrender.com/api/requests/not-approved');
       const notApprovedRequests = response.data;
 
       const permissions = notApprovedRequests.filter(request => request.requestType === 'permission');

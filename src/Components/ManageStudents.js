@@ -34,7 +34,7 @@ const ManageStudents = ({ closeForm }) => {
     console.log(formData);
 
     try {
-      const response = await axios.post('http://localhost:5000/api/hostelers', formData);
+      const response = await axios.post('https://hostelportal-backend.onrender.com/api/hostelers', formData);
       console.log(response.data); // Log the response from the backend
 
       // Set success message
