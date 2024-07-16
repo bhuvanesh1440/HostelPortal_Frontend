@@ -10,7 +10,7 @@ import Signin from './Components/Signin';
 function App() {
   return (
     <AuthProvider>
-      <Router basename='/HostelPortal_Frontend'>
+      <Router> {/*basename='/HostelPortal_Frontend'>*/}
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/register" element={<Signin />} />
